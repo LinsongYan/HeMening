@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>法律与维权 - 荷鸣 HeMening</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <style>
+        .legal-header {
+            background: #fee2e2;
+            /* Red Light */
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .section-title {
+            margin: 3rem 0 1.5rem;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 0.5rem;
+            color: var(--color-midnight);
+        }
+
+        .law-box {
+            background: #fff;
+            border-left: 5px solid var(--color-midnight);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .step-list {
+            list-style: none;
+            counter-reset: step-counter;
+        }
+
+        .step-list li {
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .step-list li::before {
+            counter-increment: step-counter;
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2rem;
+            height: 2rem;
+            background: var(--color-midnight);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 2rem;
+            font-weight: bold;
+        }
+
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .resource-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            border: 1px solid #eee;
+            transition: all 0.2s;
+        }
+
+        .resource-card:hover {
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-small {
+            font-size: 0.9rem;
+            padding: 0.5rem 1rem;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="container nav-content">
+            <a href="index.html" class="logo">荷鸣 He! Mening</a>
+            <div class="nav-links">
+                <a href="index.html">首页</a>
+                <a href="diagnosis.html">AI 诊断</a>
+                <a href="culture.html">文化百科</a>
+                <a href="comebacks.html">反击话术</a>
+                <a href="legal.html" class="active">法律维权</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="legal-header">
+        <div class="container">
+            <h1>法律与维权指南</h1>
+            <p style="margin-top: 1rem; color: #666;">法律保护每一个人。了解您的权利，以及如何行使它们。</p>
+        </div>
+    </header>
+
+    <main class="container" style="padding-bottom: 4rem;">
+
+        <!-- Constitution -->
+        <h2 class="section-title">📜 权利基石</h2>
+        <div class="law-box">
+            <h3>荷兰宪法第一条 (Artikel 1 Grondwet)</h3>
+            <p style="font-size: 1.1rem; margin-top: 1rem; font-style: italic; color: #444;">
+                "在荷兰的每一个人在同等情况下都应受到同等对待。基于宗教、信仰、政治观点、种族、性别或任何其他理由的歧视，均不被允许。"
+            </p>
+            <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;">
+                Allen die zich in Nederland bevinden, worden in gelijke gevallen gelijk behandeld. Discriminatie wegens
+                godsdienst, levensovertuiging, politieke gezindheid, ras, geslacht of op welke grond dan ook, is niet
+                toegestaan.
+            </p>
+        </div>
+
+        <!-- Evidence Collection -->
+        <h2 class="section-title">🕵️‍♀️ 如何收集证据</h2>
+        <p style="margin-bottom: 2rem;">在向警方或相关机构报案时，完整的证据链至关重要。</p>
+        <ul class="step-list">
+            <li>
+                <strong>详细记录 (Log Everything)</strong>
+                <p>记录事件发生的具体日期、时间、地点。如果可能，记下对方的姓名或外貌特征。</p>
+            </li>
+            <li>
+                <strong>保存书面证据</strong>
+                <p>如果是职场或租房歧视，保留所有的邮件、短信、Whatsapp 聊天记录。不要删除任何内容。</p>
+            </li>
+            <li>
+                <strong>寻找证人</strong>
+                <p>如果当时有旁观者，请立即请求他们留下联系方式，作为后续证人。</p>
+            </li>
+            <li>
+                <strong>合法录音</strong>
+                <p>在荷兰，作为对话参与者，您有权对自己参与的谈话进行录音，而无需征得对方同意（但在发布录音前需谨慎，仅用于法律取证）。</p>
+            </li>
+        </ul>
+
+        <!-- Resources -->
+        <h2 class="section-title">🆘 官方求助渠道</h2>
+        <div class="resource-grid">
+            <div class="resource-card">
+                <h3>Discriminatie.nl</h3>
+                <p style="margin: 0.5rem 0; color: #666;">荷兰官方反歧视举报机构。</p>
+                <a href="https://www.discriminatie.nl/" target="_blank" class="btn btn-primary btn-small">在线举报
+                    &rarr;</a>
+            </div>
+
+            <div class="resource-card">
+                <h3>警方 (Politie)</h3>
+                <p style="margin: 0.5rem 0; color: #666;">针对仇恨言论、暴力威胁等犯罪行为。</p>
+                <p style="font-weight: bold;">紧急电话: 112 <br> 非紧急: 0900-8844</p>
+            </div>
+
+            <div class="resource-card">
+                <h3>Asian Raisins</h3>
+                <p style="margin: 0.5rem 0; color: #666;">专注亚裔平权的非营利组织，提供社群支持。</p>
+                <a href="https://asianraisins.nl/" target="_blank" class="btn btn-primary btn-small">访问官网 &rarr;</a>
+            </div>
+
+            <div class="resource-card">
+                <h3>Juridisch Loket</h3>
+                <p style="margin: 0.5rem 0; color: #666;">为低收入者提供免费法律咨询。</p>
+                <a href="https://www.juridischloket.nl/" target="_blank" class="btn btn-primary btn-small">寻求帮助
+                    &rarr;</a>
+            </div>
+        </div>
+    </main>
+
+
+<script src="scripts/lang.js"></script></body>
+
+</html>

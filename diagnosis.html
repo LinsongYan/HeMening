@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 智能诊断 - 荷鸣 HeMening</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/chat.css">
+</head>
+
+<body>
+
+    <nav>
+        <div class="container nav-content">
+            <a href="index.html" class="logo">荷鸣 He! Mening</a>
+            <div class="nav-links">
+                <a href="index.html">首页</a>
+                <a href="diagnosis.html" class="active">AI 诊断</a>
+                <a href="culture.html">文化百科</a>
+                <a href="comebacks.html">反击话术</a>
+                <a href="legal.html">法律维权</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container" style="padding-top: 2rem;">
+        <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+            <h1>AI 歧视评估助手</h1>
+            <p style="color: var(--color-text-sub); margin-top: 0.5rem;">
+                像聊天一样告诉我们发生了什么。AI 将基于荷兰法律和文化背景，为您分析是否构成歧视，并提供应对建议。
+            </p>
+        </div>
+
+        <!-- Chat Interface -->
+        <div class="chat-container">
+            <div class="chat-header">
+                <span>🤖 荷鸣 AI 助手 (在线)</span>
+                <a href="index.html" style="font-size: 0.9rem; color: #666; text-decoration: none;">✕ 结束</a>
+            </div>
+
+            <div class="chat-messages" id="chat-messages">
+                <!-- Messages will appear here -->
+
+                <!-- Typing Indicator (Hidden by default) -->
+                <div class="typing-indicator" id="typing-indicator">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
+
+            <div class="chat-input-area">
+                <input type="text" id="user-input" class="chat-input-field" placeholder="请在这里输入...">
+                <button id="send-btn" class="chat-send-btn">发送</button>
+            </div>
+        </div>
+
+        <div style="text-align: center; font-size: 0.85rem; color: #999; margin-bottom: 3rem;">
+            🔒 <span style="font-weight: 500;">隐私保护模式</span>：所有对话仅在您的浏览器本地处理，不会保存到服务器。
+        </div>
+    </main>
+
+
+    <script src="scripts/chat.js"></script>
+<script src="scripts/lang.js"></script></body>
+
+</html>

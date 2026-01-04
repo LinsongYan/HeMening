@@ -1,0 +1,202 @@
+/* Chat Layout */
+.chat-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    background: #f2f2f2;
+    /* WeChat Gray */
+    height: 600px;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid #ddd;
+    position: relative;
+}
+
+.chat-header {
+    background: #f2f2f2;
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    font-weight: 600;
+    color: var(--color-midnight);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* User Input Area */
+.chat-input-area {
+    background: #f7f7f7;
+    padding: 1rem;
+    border-top: 1px solid #ddd;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.chat-input-field {
+    flex: 1;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    background: white;
+}
+
+.chat-input-field:focus {
+    border-color: #07c160;
+    /* WeChat Green */
+}
+
+.chat-send-btn {
+    background: #07c160;
+    /* WeChat Green */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.chat-send-btn:hover {
+    background: #06ad56;
+}
+
+.chat-send-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+/* Message Bubbles */
+.message {
+    max-width: 80%;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    position: relative;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.message.bot {
+    align-self: flex-start;
+    background: white;
+    color: black;
+    border: 1px solid #ededed;
+}
+
+.message.bot::before {
+    content: "";
+    /* Little arrow */
+    position: absolute;
+    left: -6px;
+    top: 12px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px 6px 6px 0;
+    border-color: transparent white transparent transparent;
+}
+
+.message.user {
+    align-self: flex-end;
+    background: #95ec69;
+    /* WeChat Green Message */
+    color: black;
+}
+
+.message.user::before {
+    content: "";
+    position: absolute;
+    right: -6px;
+    top: 12px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px 0 6px 6px;
+    border-color: transparent transparent transparent #95ec69;
+}
+
+.typing-indicator {
+    padding: 10px;
+    background: white;
+    align-self: flex-start;
+    border-radius: 8px;
+    display: none;
+    /* Hidden by default */
+    align-items: center;
+    gap: 4px;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    background: #ccc;
+    border-radius: 50%;
+    animation: bounce 1.4s infinite ease-in-out both;
+}
+
+.dot:nth-child(1) {
+    animation-delay: -0.32s;
+}
+
+.dot:nth-child(2) {
+    animation-delay: -0.16s;
+}
+
+@keyframes bounce {
+
+    0%,
+    80%,
+    100% {
+        transform: scale(0);
+    }
+
+    40% {
+        transform: scale(1);
+    }
+}
+
+/* Selection Buttons in Chat */
+.option-btn {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 8px 12px;
+    margin-top: 5px;
+    background: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    cursor: pointer;
+    color: var(--color-primary);
+    transition: background 0.2s;
+}
+
+.option-btn:hover {
+    background: #e0f2fe;
+}

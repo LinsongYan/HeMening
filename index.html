@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>荷鸣 HeMening - 在荷兰，你并不孤单</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <style>
+        /* Home Specific Styles */
+        .hero {
+            padding: 8rem 0 6rem;
+            text-align: center;
+            background: radial-gradient(circle at top right, #e0f2fe 0%, transparent 40%),
+                        radial-gradient(circle at bottom left, #fef2f2 0%, transparent 40%);
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--color-midnight) 0%, var(--color-primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--color-text-sub);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 4rem 0;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            text-decoration: none;
+            color: inherit;
+            border: 1px solid rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            border-color: var(--color-primary);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .icon-box {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .bg-blue { background: #e0f2fe; color: var(--color-primary); }
+        .bg-red { background: #fee2e2; color: var(--color-alert); }
+        .bg-indigo { background: #e0e7ff; color: var(--color-accent); }
+
+        .feature-card h3 { margin-bottom: 0.5rem; }
+        .feature-card p { color: var(--color-text-sub); }
+
+        .stats-ticker {
+            background: var(--color-midnight);
+            color: white;
+            padding: 1rem 0;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container nav-content">
+            <a href="index.html" class="logo">荷鸣 He! Mening</a>
+            <div class="nav-links">
+                <a href="index.html" class="active">首页</a>
+                <a href="diagnosis.html">AI 诊断</a>
+                <a href="culture.html">文化百科</a>
+                <a href="comebacks.html">反击话术</a>
+                <a href="legal.html">法律维权</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="stats-ticker">
+        <div class="container">
+            <span style="opacity: 0.8">📢 最新动态：</span> 如果您遇到职场歧视，请保留邮件证据 • 2024年反歧视法新修正案生效中
+        </div>
+    </div>
+
+    <header class="hero">
+        <div class="container">
+            <h1>在荷兰，你并不孤单</h1>
+            <p>面对不公，我们不再沉默。荷鸣提供专业的 AI 歧视评估、反击话术支持与法律援助指引。</p>
+            <div style="display: flex; gap: 1rem; justify-content: center;">
+                <a href="diagnosis.html" class="btn btn-primary">🤖 AI 智能诊断</a>
+                <a href="legal.html" class="btn btn-alert">⚖️ 一键求助</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="features-grid">
+            <a href="diagnosis.html" class="feature-card">
+                <div class="icon-box bg-blue">🤖</div>
+                <h3>AI 歧视诊断器</h3>
+                <p>模拟专业咨询，分析您遇到的情况是否构成种族歧视，并提供应对建议。</p>
+            </a>
+
+            <a href="comebacks.html" class="feature-card">
+                <div class="icon-box bg-indigo">🗣️</div>
+                <h3>反击话术百科</h3>
+                <p>面对 "Ni Hao" 或无礼玩笑？这里有教你如果不带脏字地有力回击。</p>
+            </a>
+
+            <a href="legal.html" class="feature-card">
+                <div class="icon-box bg-red">⚖️</div>
+                <h3>法律与维权</h3>
+                <p>中文版维权指南，如何收集证据，以及官方投诉通道导航。</p>
+            </a>
+        </div>
+    </main>
+
+
+<script src="scripts/lang.js"></script></body>
+</html>

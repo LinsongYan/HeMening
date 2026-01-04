@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>反击话术百科 - 荷鸣 HeMening</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <style>
+        .wiki-section {
+            padding: 4rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .wiki-header {
+            background: #f0fdf4;
+            /* Green Light */
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        /* Audio Player Styles from previous Wiki */
+        .audio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .audio-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+        }
+
+        .dutch-text {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--color-midnight);
+            margin-bottom: 0.5rem;
+            font-family: sans-serif;
+        }
+
+        .chinese-trans {
+            font-size: 0.9rem;
+            color: var(--color-text-sub);
+            margin-bottom: 1rem;
+        }
+
+        .play-audio-btn {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid var(--color-primary);
+            background: white;
+            color: var(--color-primary);
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .play-audio-btn:hover {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        .play-audio-btn.playing {
+            background: var(--color-primary);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="container nav-content">
+            <a href="index.html" class="logo">荷鸣 He! Mening</a>
+            <div class="nav-links">
+                <a href="index.html">首页</a>
+                <a href="diagnosis.html">AI 诊断</a>
+                <a href="culture.html">文化百科</a>
+                <a href="comebacks.html" class="active">反击话术</a>
+                <a href="legal.html">法律维权</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="wiki-header">
+        <div class="container">
+            <h1>反击话术百科</h1>
+            <p style="margin-top: 1rem; color: #555;">遇到冒犯时，沉默往往被视为默认。试着使用以下话术进行回击。</p>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- Defense Section -->
+        <section class="wiki-section" style="border: none;">
+            <div class="audio-grid">
+                <!-- Level 1: Polite -->
+                <div class="audio-card" style="border-left: 4px solid var(--color-accent);">
+                    <div style="font-size: 0.8rem; color: var(--color-accent); margin-bottom: 0.5rem;">LEVEL 1: 礼貌询问
+                        (Mirroring)</div>
+                    <div class="dutch-text">Waarom is dat grappig?</div>
+                    <div class="chinese-trans">这为什么好笑？(让对方解释笑点)</div>
+                    <button class="play-audio-btn" data-text="Waarom is dat grappig?">🔊 听发音</button>
+                </div>
+
+                <div class="audio-card" style="border-left: 4px solid var(--color-accent);">
+                    <div style="font-size: 0.8rem; color: var(--color-accent); margin-bottom: 0.5rem;">LEVEL 1: 表达不适
+                    </div>
+                    <div class="dutch-text">Ik vind dit niet prettig.</div>
+                    <div class="chinese-trans">我觉得这令人不舒服。</div>
+                    <button class="play-audio-btn" data-text="Ik vind dit niet prettig.">🔊 听发音</button>
+                </div>
+
+                <!-- Level 2: Stern -->
+                <div class="audio-card" style="border-left: 4px solid orange;">
+                    <div style="font-size: 0.8rem; color: orange; margin-bottom: 0.5rem;">LEVEL 2: 严肃警告</div>
+                    <div class="dutch-text">Dat is een racistische opmerking.</div>
+                    <div class="chinese-trans">那是一个种族主义的评论。</div>
+                    <button class="play-audio-btn" data-text="Dat is een racistische opmerking.">🔊 听发音</button>
+                </div>
+
+                <div class="audio-card" style="border-left: 4px solid orange;">
+                    <div style="font-size: 0.8rem; color: orange; margin-bottom: 0.5rem;">LEVEL 2: 划清界限</div>
+                    <div class="dutch-text">Stop hiermee. Nu.</div>
+                    <div class="chinese-trans">停止这样做。现在。</div>
+                    <button class="play-audio-btn" data-text="Stop hiermee. Nu.">🔊 听发音</button>
+                </div>
+
+                <!-- Level 3: Legal -->
+                <div class="audio-card" style="border-left: 4px solid var(--color-alert);">
+                    <div style="font-size: 0.8rem; color: var(--color-alert); margin-bottom: 0.5rem;">LEVEL 3: 法律威胁
+                    </div>
+                    <div class="dutch-text">Ik ga dit melden bij de politie.</div>
+                    <div class="chinese-trans">我会向警方报告这件事。</div>
+                    <button class="play-audio-btn" data-text="Ik ga dit melden bij de politie.">🔊 听发音</button>
+                </div>
+
+                <div class="audio-card" style="border-left: 4px solid var(--color-alert);">
+                    <div style="font-size: 0.8rem; color: var(--color-alert); margin-bottom: 0.5rem;">LEVEL 3: 记录证据
+                    </div>
+                    <div class="dutch-text">Ik neem dit gesprek op.</div>
+                    <div class="chinese-trans">我正在录音这段对话。</div>
+                    <button class="play-audio-btn" data-text="Ik neem dit gesprek op.">🔊 听发音</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="scripts/wiki.js"></script>
+    <script src="scripts/lang.js"></script>
+</body>
+
+</html>

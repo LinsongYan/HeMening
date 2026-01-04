@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文化差异百科 - 荷鸣 HeMening</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <style>
+        .culture-hero {
+            background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 100%);
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .category-title {
+            margin: 3rem 0 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--color-midnight);
+            border-bottom: 2px solid #eee;
+            padding-bottom: 0.5rem;
+        }
+
+        .category-icon {
+            font-size: 1.8rem;
+        }
+
+        .topic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .culture-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s;
+        }
+
+        .culture-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--color-primary);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .card-number {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--color-text-sub);
+            opacity: 0.5;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--color-midnight);
+        }
+
+        .scenario-box {
+            background: #f8fafc;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            font-style: italic;
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        .core-concept {
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .check-list {
+            margin-bottom: 1.5rem;
+        }
+
+        .check-item {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .check-icon {
+            flex-shrink: 0;
+            font-weight: bold;
+        }
+
+        .is-culture {
+            color: var(--color-success);
+        }
+
+        .is-racism {
+            color: var(--color-alert);
+        }
+
+        .pro-tip {
+            background: #e0f2fe;
+            color: var(--color-primary);
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="container nav-content">
+            <a href="index.html" class="logo">荷鸣 He! Mening</a>
+            <div class="nav-links">
+                <a href="index.html">首页</a>
+                <a href="diagnosis.html">AI 诊断</a>
+                <a href="culture.html" class="active">文化百科</a>
+                <a href="comebacks.html">反击话术</a>
+                <a href="legal.html">法律维权</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="culture-hero">
+        <div class="container">
+            <h1>读懂荷兰文化</h1>
+            <p style="margin-top: 1rem; color: #666; max-width: 600px; margin-left: auto; margin-right: auto;">
+                区分“文化差异”与“歧视”是反击的第一步。<br>直男文化、规则意识、极简社交... 深度解析荷兰社会的潜规则。
+            </p>
+        </div>
+    </header>
+
+    <main class="container" style="padding-bottom: 4rem;" id="content-area">
+        <div style="text-align: center; padding: 4rem; color: #999;">
+            Loading content...
+        </div>
+    </main>
+
+    <script src="Content/culture_data.js"></script>
+    <script src="scripts/parser.js"></script>
+    <script src="scripts/lang.js"></script>
+
+    <script src="scripts/lang.js"></script>
+</body>
+
+</html>
