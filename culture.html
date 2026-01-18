@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>文化差异百科 - 荷鸣 HeMening</title>
+    <title>情景话术 - 荷鸣 HeMening</title>
     <link rel="stylesheet" href="styles/main.css">
     <style>
         .culture-hero {
@@ -118,6 +118,153 @@
             font-size: 0.9rem;
             text-align: center;
         }
+
+        .savage-section {
+            margin-top: 0.75rem;
+        }
+
+        .savage-section details {
+            background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+
+        .savage-section summary {
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            font-size: 0.85rem;
+            color: #b91c1c;
+            font-weight: 600;
+            user-select: none;
+        }
+
+        .savage-section summary:hover {
+            background: rgba(185, 28, 28, 0.1);
+        }
+
+        .savage-content {
+            padding: 0.75rem 1rem;
+            font-size: 0.9rem;
+            border-top: 1px dashed #fca5a5;
+        }
+
+        .savage-zh {
+            color: #991b1b;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
+        .savage-nl {
+            color: #b45309;
+            font-family: sans-serif;
+            font-size: 0.85rem;
+            padding-top: 0.5rem;
+            border-top: 1px dotted #fcd34d;
+        }
+
+        /* Comebacks Section */
+        .comebacks-section {
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+
+        .comebacks-section>summary {
+            padding: 1.5rem 2rem;
+            cursor: pointer;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--color-midnight);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            user-select: none;
+            list-style: none;
+        }
+
+        .comebacks-section>summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .comebacks-section>summary::after {
+            content: '▼';
+            font-size: 0.8rem;
+            margin-left: auto;
+            transition: transform 0.3s;
+        }
+
+        .comebacks-section[open]>summary::after {
+            transform: rotate(180deg);
+        }
+
+        .comebacks-section>summary:hover {
+            background: rgba(0, 0, 0, 0.03);
+        }
+
+        .comebacks-content {
+            padding: 0 2rem 2rem;
+        }
+
+        .comebacks-intro {
+            color: #555;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .audio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+
+        .audio-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            padding: 1.25rem;
+            border-radius: 0.75rem;
+        }
+
+        .level-tag {
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .dutch-text {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--color-midnight);
+            margin-bottom: 0.4rem;
+            font-family: sans-serif;
+        }
+
+        .chinese-trans {
+            font-size: 0.85rem;
+            color: var(--color-text-sub);
+            margin-bottom: 0.75rem;
+        }
+
+        .play-audio-btn {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid var(--color-primary);
+            background: white;
+            color: var(--color-primary);
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+        }
+
+        .play-audio-btn:hover {
+            background: var(--color-primary);
+            color: white;
+        }
     </style>
 </head>
 
@@ -129,32 +276,89 @@
             <div class="nav-links">
                 <a href="index.html">首页</a>
                 <a href="diagnosis.html">AI 诊断</a>
-                <a href="culture.html" class="active">文化百科</a>
-                <a href="comebacks.html">反击话术</a>
+                <a href="culture.html" class="active">情景话术</a>
                 <a href="legal.html">法律维权</a>
+                <a href="report.html">歧视举报</a>
             </div>
         </div>
     </nav>
 
     <header class="culture-hero">
         <div class="container">
-            <h1>读懂荷兰文化</h1>
+            <h1>情景话术百科</h1>
             <p style="margin-top: 1rem; color: #666; max-width: 600px; margin-left: auto; margin-right: auto;">
-                区分“文化差异”与“歧视”是反击的第一步。<br>直男文化、规则意识、极简社交... 深度解析荷兰社会的潜规则。
+                区分"文化差异"与"歧视"是反击的第一步。<br>掌握荷兰潜规则，学会有力回击。
             </p>
         </div>
     </header>
 
-    <main class="container" style="padding-bottom: 4rem;" id="content-area">
-        <div style="text-align: center; padding: 4rem; color: #999;">
-            Loading content...
+    <main class="container" style="padding: 2rem 0 4rem;">
+
+        <!-- Comebacks Section (Collapsible) -->
+        <details class="comebacks-section">
+            <summary>🗣️ 反击话术速查</summary>
+            <div class="comebacks-content">
+                <p class="comebacks-intro">遇到冒犯时，沉默往往被视为默认。按严重程度选择合适的回应。</p>
+                <div class="audio-grid">
+                    <!-- Level 1 -->
+                    <div class="audio-card" style="border-left: 4px solid var(--color-accent);">
+                        <div class="level-tag" style="color: var(--color-accent);">LEVEL 1: 礼貌询问</div>
+                        <div class="dutch-text">Waarom is dat grappig?</div>
+                        <div class="chinese-trans">这为什么好笑？(让对方解释笑点)</div>
+                        <button class="play-audio-btn" data-text="Waarom is dat grappig?">🔊 听发音</button>
+                    </div>
+
+                    <div class="audio-card" style="border-left: 4px solid var(--color-accent);">
+                        <div class="level-tag" style="color: var(--color-accent);">LEVEL 1: 表达不适</div>
+                        <div class="dutch-text">Ik vind dit niet prettig.</div>
+                        <div class="chinese-trans">我觉得这令人不舒服。</div>
+                        <button class="play-audio-btn" data-text="Ik vind dit niet prettig.">🔊 听发音</button>
+                    </div>
+
+                    <!-- Level 2 -->
+                    <div class="audio-card" style="border-left: 4px solid orange;">
+                        <div class="level-tag" style="color: orange;">LEVEL 2: 严肃警告</div>
+                        <div class="dutch-text">Dat is een racistische opmerking.</div>
+                        <div class="chinese-trans">那是一个种族主义的评论。</div>
+                        <button class="play-audio-btn" data-text="Dat is een racistische opmerking.">🔊 听发音</button>
+                    </div>
+
+                    <div class="audio-card" style="border-left: 4px solid orange;">
+                        <div class="level-tag" style="color: orange;">LEVEL 2: 划清界限</div>
+                        <div class="dutch-text">Stop hiermee. Nu.</div>
+                        <div class="chinese-trans">停止这样做。现在。</div>
+                        <button class="play-audio-btn" data-text="Stop hiermee. Nu.">🔊 听发音</button>
+                    </div>
+
+                    <!-- Level 3 -->
+                    <div class="audio-card" style="border-left: 4px solid var(--color-alert);">
+                        <div class="level-tag" style="color: var(--color-alert);">LEVEL 3: 法律威胁</div>
+                        <div class="dutch-text">Ik ga dit melden bij de politie.</div>
+                        <div class="chinese-trans">我会向警方报告这件事。</div>
+                        <button class="play-audio-btn" data-text="Ik ga dit melden bij de politie.">🔊 听发音</button>
+                    </div>
+
+                    <div class="audio-card" style="border-left: 4px solid var(--color-alert);">
+                        <div class="level-tag" style="color: var(--color-alert);">LEVEL 3: 记录证据</div>
+                        <div class="dutch-text">Ik neem dit gesprek op.</div>
+                        <div class="chinese-trans">我正在录音这段对话。</div>
+                        <button class="play-audio-btn" data-text="Ik neem dit gesprek op.">🔊 听发音</button>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Main Content Area -->
+        <div id="content-area">
+            <div style="text-align: center; padding: 4rem; color: #999;">
+                Loading content...
+            </div>
         </div>
     </main>
 
     <script src="Content/culture_data.js"></script>
     <script src="scripts/parser.js"></script>
-    <script src="scripts/lang.js"></script>
-
+    <script src="scripts/wiki.js"></script>
     <script src="scripts/lang.js"></script>
 </body>
 

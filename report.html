@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>歧视事件举报 - 荷鸣 HeMening</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/report.css">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+
+<body>
+
+    <nav>
+        <div class="container nav-content">
+            <a href="index.html" class="logo">荷鸣 He! Mening</a>
+            <div class="nav-links">
+                <a href="index.html">首页</a>
+                <a href="diagnosis.html">AI 诊断</a>
+                <a href="culture.html">情景话术</a>
+                <a href="legal.html">法律维权</a>
+                <a href="report.html" class="active">歧视举报</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="report-hero">
+        <div class="container">
+            <h1>🚨 歧视事件举报</h1>
+            <p>您的声音很重要。记录歧视事件，帮助我们了解问题分布，共同推动社会改变。所有信息将被匿名处理。</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="report-content">
+            <!-- Report Form Section -->
+            <section class="report-form-section">
+                <h2>📝 提交事件报告</h2>
+                <form id="report-form">
+                    <div class="form-group">
+                        <label for="incident-description">事件描述</label>
+                        <textarea id="incident-description" name="description" placeholder="请描述您遇到的歧视事件..."
+                            required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="region">发生地区</label>
+                        <select id="region" name="region" class="region-select" required>
+                            <option value="">请选择地区...</option>
+                            <option value="amsterdam">阿姆斯特丹 Amsterdam</option>
+                            <option value="rotterdam">鹿特丹 Rotterdam</option>
+                            <option value="the-hague">海牙 The Hague</option>
+                            <option value="utrecht">乌得勒支 Utrecht</option>
+                            <option value="eindhoven">埃因霍温 Eindhoven</option>
+                            <option value="groningen">格罗宁根 Groningen</option>
+                            <option value="tilburg">蒂尔堡 Tilburg</option>
+                            <option value="almere">阿尔梅勒 Almere</option>
+                            <option value="breda">布雷达 Breda</option>
+                            <option value="nijmegen">奈梅亨 Nijmegen</option>
+                            <option value="haarlem">哈勒姆 Haarlem</option>
+                            <option value="arnhem">阿纳姆 Arnhem</option>
+                            <option value="leiden">莱顿 Leiden</option>
+                            <option value="maastricht">马斯特里赫特 Maastricht</option>
+                            <option value="delft">代尔夫特 Delft</option>
+                            <option value="other">其他地区</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="incident-date">发生日期</label>
+                        <input type="date" id="incident-date" name="date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>严重程度</label>
+                        <input type="hidden" id="severity-input" name="severity" value="">
+                        <div class="severity-rating">
+                            <div class="stars-container">
+                                <span class="star" data-rating="1">★</span>
+                                <span class="star" data-rating="2">★</span>
+                                <span class="star" data-rating="3">★</span>
+                                <span class="star" data-rating="4">★</span>
+                                <span class="star" data-rating="5">★</span>
+                            </div>
+                            <div class="severity-labels">
+                                <span>轻微</span>
+                                <span>极严重</span>
+                            </div>
+                            <div class="severity-description"></div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        <span>📤</span>
+                        <span>提交报告</span>
+                    </button>
+                </form>
+            </section>
+
+            <!-- Heatmap Section -->
+            <section class="heatmap-section">
+                <h2>🗺️ 事件分布热力图</h2>
+                <div class="heatmap-container">
+                    <div id="heatmap"></div>
+                </div>
+                <div class="heatmap-legend">
+                    <span>低频</span>
+                    <div class="legend-gradient"></div>
+                    <span>高频</span>
+                </div>
+                <div class="stats-row">
+                    <div class="stat-card">
+                        <div class="stat-number" id="stat-total">0</div>
+                        <div class="stat-label">报告总数</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="stat-severity">0</div>
+                        <div class="stat-label">平均严重度</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="stat-regions">0</div>
+                        <div class="stat-label">涉及地区</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Success Message Overlay -->
+    <div class="overlay"></div>
+    <div class="success-message">
+        <div class="success-icon">✅</div>
+        <h3>感谢您的报告！</h3>
+        <p>您的声音对推动社会进步很重要。我们会认真对待每一份报告。</p>
+        <button class="btn btn-primary close-success" style="margin-top: 1.5rem;">关闭</button>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Leaflet Heat Plugin -->
+    <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
+    <!-- Report Page Script -->
+    <script src="scripts/report.js"></script>
+    <script src="scripts/lang.js"></script>
+</body>
+
+</html>

@@ -86,7 +86,8 @@ function parseAndRender(fullText) {
                 coreDesc: '',
                 checkYes: '',
                 checkNo: '',
-                tip: ''
+                tip: '',
+                savage: ''
             };
             continue;
         }
@@ -110,8 +111,10 @@ function parseAndRender(fullText) {
                 currentTopic.checkYes = line.replace('✅ 文化差异：', '').trim();
             } else if (line.startsWith('❌ 涉嫌歧视：')) {
                 currentTopic.checkNo = line.replace('❌ 涉嫌歧视：', '').trim();
-            } else if (line.startsWith('一句话攻略：')) {
-                currentTopic.tip = line.replace('一句话攻略：', '').trim();
+            } else if (line.startsWith('Tips：')) {
+                currentTopic.tip = line.replace('Tips：', '').trim();
+            } else if (line.startsWith('🔥')) {
+                currentTopic.savage = line.replace(/^🔥.*?：/, '').trim();
             }
             // Handle multi-line descriptions (simple fallback)
             else if (!line.startsWith('如何辨别')) {
@@ -130,6 +133,24 @@ function parseAndRender(fullText) {
 }
 
 function buildCardHTML(topic) {
+    let savageHTML = '';
+    if (topic.savage) {
+        const parts = topic.savage.split('|').map(s => s.trim());
+        const chinese = parts[0] || '';
+        const dutch = parts[1] || '';
+        savageHTML = `
+        <div class="savage-section">
+            <details>
+                <summary>🔥 反击模式（慎用）</summary>
+                <div class="savage-content">
+                    <div class="savage-zh">"${chinese}"</div>
+                    ${dutch ? `<div class="savage-nl">"${dutch}"</div>` : ''}
+                </div>
+            </details>
+        </div>
+        `;
+    }
+
     return `
     <div class="culture-card">
         <div class="card-header">
@@ -142,7 +163,8 @@ function buildCardHTML(topic) {
             <div class="check-item"><span class="check-icon is-culture">✅</span><span>${topic.checkYes}</span></div>
             <div class="check-item"><span class="check-icon is-racism">❌</span><span>${topic.checkNo}</span></div>
         </div>
-        <div class="pro-tip">${topic.tip}</div>
+        <div class="pro-tip">💡 Tips: ${topic.tip}</div>
+        ${savageHTML}
     </div>
     `;
 }
